@@ -1,6 +1,6 @@
 # DeepSeekHW
 My coursework for Deep Learning
--link to my Cloud Drive：https://kod.cuc.edu.cn/#s/_o6_XHsg
+- link to my Cloud Drive：https://kod.cuc.edu.cn/#s/_o6_XHsg
 
 # Thesis Section
 # DeepSeek Research: Principle Analysis, Application Fields and Optimization Solutions
