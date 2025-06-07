@@ -1,5 +1,5 @@
 # DeepSeekHW
-HW for Deep Learning
+My coursework for Deep Learning
 
 # Thesis Section
 # DeepSeek Research: Principle Analysis, Application Fields and Optimization Solutions
