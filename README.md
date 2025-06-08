@@ -87,3 +87,54 @@ Introduce intra-group contrast and KL divergence constraints to suppress the sem
 
 # Code Section
 
+This code implements a maze-solving agent using PPO and GRPO.
+
+## 1. Maze Environment:
+   - 10x10 grid with walls (1) and paths (0)
+   - Start position (1,1) and goal (8,8)
+   - State: Normalized agent position + goal position (4 values)
+   - Rewards: 
+     - +40 for reaching goal
+     - Distance-based reward (moving closer to goal)
+     - -0.05 per step penalty
+     - -1.0 penalty for hitting walls
+
+## 2. Policy Network:
+   - 2 hidden layers (64 neurons each)
+   - Actor: Outputs action probabilities
+   - Critic: Estimates state value
+
+## 3. Agent:
+###  3.1 PPO Agent
+   - Uses clipped surrogate objective
+   - Entropy bonus for exploration
+   - Advantage normalization
+   - Discount factor (γ=0.95)
+### 3.2 GRPO Agent
+  - Reference policy updated periodically (every 10 updates)
+  - KL divergence penalty (β=0.1) for policy stability
+  - Clipped surrogate objective (ε=0.2)
+  - Advantage normalization
+  - Discount factor (γ=0.95)
+## 4. Training:
+   - Records trajectories
+   - Computes returns and advantages
+   - Updates policy using multiple epochs
+   - Visualizes best path
+
+### Training Parameters
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| Episodes | 1000 | Training iterations |
+| Max Steps | 200 | Maximum steps per episode |
+| Learning Rate | 0.001 | Optimizer step size |
+| γ | 0.95 | Discount factor |
+| Clip ε | 0.2 | PPO clipping range |
+| β | 0.1 | KL divergence coefficient |
+| Epochs | 4 | Optimization epochs per update |
+| Ref Update Freq | 10 | Reference policy update frequency |
+
+## 5. Visualization:
+   - Plots maze with agent path
+   - Colors: green=start, red=goal, blue=path
+   - Saves training metrics (rewards/losses)
