@@ -87,7 +87,7 @@ Introduce intra-group contrast and KL divergence constraints to suppress the sem
 
 # Code Section
 
-- This code implements a maze-solving agent using PPO and GRPO.（Maze_PPO.ipynb and Maze_GRPO.ipynb)
+- The core principles involved in DeepSeek, such as PPO and GRPO algorithms, will be used for the task of finding maze routes（Maze_PPO.ipynb and Maze_GRPO.ipynb)
 - In addition, I have provided the code for training the Qwen_1.5_instruct model using GRPO.(Using GRPO on Qwen_1.5_instruct.ipynb)
    - The main contributor of this code: aburkov(https://github.com/aburkov)
 
