@@ -87,7 +87,9 @@ Introduce intra-group contrast and KL divergence constraints to suppress the sem
 
 # Code Section
 
-This code implements a maze-solving agent using PPO and GRPO.
+- This code implements a maze-solving agent using PPO and GRPO.（Maze_PPO.ipynb and Maze_GRPO.ipynb)
+- In addition, I have provided the code for training the Qwen_1.5_instruct model using GRPO.(Using GRPO on Qwen_1.5_instruct.ipynb)
+   - The main contributor of this code: aburkov(https://github.com/aburkov)
 
 ## 1. Maze Environment:
    - 10x10 grid with walls (1) and paths (0)
@@ -138,3 +140,18 @@ This code implements a maze-solving agent using PPO and GRPO.
    - Plots maze with agent path
    - Colors: green=start, red=goal, blue=path
    - Saves training metrics (rewards/losses)
+   - PPO final result 46.5
+   - GRPO final result 46.3
+
+## 6. Comparative experiment
+### 6.1 gamma=0.99
+   - PPO final result 43.8
+   - GRPO final result 47.5
+### 6.2 learning rate=0.0001
+   - PPO final result 44.3
+   - GRPO final result 47.8
+### 6.3 epoche=6
+   - PPO final result 48.0
+   - GRPO final result 46.1
+### 6.4 beta=0.05
+   - GRPO final result 44.1
